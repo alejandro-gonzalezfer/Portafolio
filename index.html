@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<!-- ============================================================
+     CONFIGURACIÓN BÁSICA Y RENDIMIENTO
+=============================================================== -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#0a0a0b" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+
+<!-- ============================================================
+     SEO / METADATOS
+     EDITAR: reemplaza "https://tu-dominio.com" por tu dominio real
+     una vez publiques el sitio (Netlify, Vercel, GitHub Pages...).
+=============================================================== -->
+<title>Alejandro González — Ingeniero Electrónico | Automatización Industrial</title>
+<meta name="description" content="Portafolio de Alejandro González, Ingeniero Electrónico especializado en automatización industrial y control de procesos: PLC, SCADA, redes industriales y control PID.">
+<meta name="keywords" content="ingeniero electrónico, automatización industrial, control de procesos, PLC, SCADA, redes industriales, PID, Bucaramanga">
+<meta name="author" content="Alejandro González">
+<link rel="canonical" href="https://tu-dominio.com/">
+
+<!-- Open Graph (Facebook, LinkedIn, WhatsApp) -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_CO">
+<meta property="og:title" content="Alejandro González — Ingeniero Electrónico">
+<meta property="og:description" content="Automatización industrial y control de procesos: PLC, SCADA, redes industriales y control PID.">
+<meta property="og:url" content="https://tu-dominio.com/">
+<meta property="og:image" content="https://tu-dominio.com/assets/og-cover.jpg">
+<!-- EDITAR: sube una imagen de 1200x630px a assets/og-cover.jpg para que se vea bien al compartir el link -->
+
+<!-- Twitter / X Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Alejandro González — Ingeniero Electrónico">
+<meta name="twitter:description" content="Automatización industrial y control de procesos: PLC, SCADA, redes industriales y control PID.">
+<meta name="twitter:image" content="https://tu-dominio.com/assets/og-cover.jpg">
+
+<!-- Favicon: EDITAR — agrega tus propios íconos en /assets y descomenta -->
+<!-- <link rel="icon" type="image/png" href="assets/favicon.png"> -->
+<!-- <link rel="apple-touch-icon" href="assets/apple-touch-icon.png"> -->
+
+<!-- ============================================================
+     TIPOGRAFÍA
+     Solo se cargan los pesos que realmente se usan, para reducir
+     el peso de la página (mejor rendimiento).
+=============================================================== -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/style.css">
+
+<!-- ============================================================
+     DATOS ESTRUCTURADOS (SEO) — schema.org Person
+     Ayuda a que buscadores entiendan quién eres y qué haces.
+     EDITAR: actualiza sameAs con tu LinkedIn cuando lo tengas.
+=============================================================== -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Alejandro González",
+  "jobTitle": "Ingeniero Electrónico",
+  "description": "Ingeniero Electrónico especializado en automatización industrial y control de procesos.",
+  "url": "https://tu-dominio.com/",
+  "email": "mailto:alejandro.ingelectronica@gmail.com",
+  "sameAs": [
+    "https://github.com/alejandro-gonzalezfer",
+    "https://www.instagram.com/alejandro_gonzalezfer/",
+    "https://x.com/alejandroGonF"
+  ]
+}
+</script>
+
+<!-- ============================================================
+     TEMA (claro/oscuro) — script inline y bloqueante a propósito.
+     Se ejecuta ANTES de pintar la página para evitar el parpadeo
+     de "flash" al cambiar de tema (FOUC). Lee la preferencia
+     guardada o, si no hay ninguna, la del sistema operativo.
+=============================================================== -->
+<script>
+  (function () {
+    var saved = localStorage.getItem('theme');
+    var theme = saved || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+    document.documentElement.setAttribute('data-theme', theme);
+  })();
+</script>
+</head>
+<body>
+
+<!-- Enlace de accesibilidad: permite saltar la navegación con el teclado -->
+<a href="#contenido-principal" class="skip-link">Saltar al contenido principal</a>
+
+<!-- ============================================================
+  GUÍA RÁPIDA DE PERSONALIZACIÓN
+  1. Busca "EDITAR:" en este archivo para encontrar textos o datos de ejemplo.
+  2. El formulario de contacto ya está conectado a Formspree y funciona.
+  3. Cambia las imágenes en /assets (o usa las iniciales, ya vienen por defecto).
+=============================================================== -->
+
+<!-- ============================================================
+     FONDO DECORATIVO — Manchas de gradiente (estilo Vercel/Apple)
+     Puramente visual, no interfiere con el contenido ni la lectura.
+=============================================================== -->
+<div class="aurora" aria-hidden="true">
+  <span class="aurora__blob aurora__blob--1"></span>
+  <span class="aurora__blob aurora__blob--2"></span>
+  <span class="aurora__blob aurora__blob--3"></span>
+</div>
+
+<!-- ===================== NAV ===================== -->
+<header class="nav" id="nav">
+  <div class="nav__inner">
+    <a href="#inicio" class="nav__logo" aria-label="Ir al inicio">
+      <span class="nav__logo-mark" aria-hidden="true">AG</span>
+      <span class="nav__logo-text">Alejandro González</span>
+    </a>
+
+    <nav class="nav__links" id="navLinks" aria-label="Navegación principal">
+      <a href="#inicio" class="nav__link" data-nav>Inicio</a>
+      <a href="#sobre-mi" class="nav__link" data-nav>Sobre mí</a>
+      <a href="#habilidades" class="nav__link" data-nav>Habilidades</a>
+      <a href="#proyectos" class="nav__link" data-nav>Proyectos</a>
+      <a href="#educacion" class="nav__link" data-nav>Educación</a>
+      <a href="#blog" class="nav__link" data-nav>Blog</a>
+      <a href="#contacto" class="nav__link nav__link--cta" data-nav>Contacto</a>
+    </nav>
+
+    <div class="nav__actions">
+      <button type="button" class="theme-toggle" id="themeToggle" aria-label="Cambiar entre modo claro y oscuro" aria-pressed="false">
+        <svg class="theme-toggle__icon theme-toggle__icon--sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="4.5"/>
+          <path d="M12 2.5v2.4M12 19.1v2.4M4.9 4.9l1.7 1.7M17.4 17.4l1.7 1.7M2.5 12h2.4M19.1 12h2.4M4.9 19.1l1.7-1.7M17.4 6.6l1.7-1.7"/>
+        </svg>
+        <svg class="theme-toggle__icon theme-toggle__icon--moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5a8.5 8.5 0 1 0 10.7 10.7Z"/>
+        </svg>
+      </button>
+
+      <button class="nav__toggle" id="navToggle" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="navLinks">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="contenido-principal">
+
+  <!-- ===================== HERO ===================== -->
+  <section class="hero" id="inicio">
+    <div class="hero__inner">
+      <p class="eyebrow reveal-up"><span class="dot" aria-hidden="true"></span> Abierto a nuevos proyectos y oportunidades</p>
+
+      <h1 class="hero__name reveal-up" style="--delay: 0.05s">
+        Alejandro <span class="text-gradient">González</span>
+      </h1>
+
+      <p class="hero__role reveal-up" style="--delay: 0.1s">
+        Ingeniero Electrónico · <span class="typed" id="typedRole">Automatización Industrial</span><span class="cursor" aria-hidden="true">|</span>
+      </p>
+
+      <p class="hero__tagline reveal-up" style="--delay: 0.15s">
+        Diseño e implemento sistemas de control y automatización industrial: desde la
+        programación de PLC y arquitecturas SCADA hasta la integración de instrumentación
+        en planta. Enfocado en procesos confiables, eficientes y bien documentados.
+      </p>
+
+      <div class="hero__cta reveal-up" style="--delay: 0.2s">
+        <a href="#proyectos" class="btn btn--primary">Ver proyectos</a>
+        <a href="#contacto" class="btn btn--glass">Contáctame</a>
+      </div>
+
+      <div class="hero__socials reveal-up" style="--delay: 0.25s" aria-label="Redes sociales">
+        <!-- EDITAR: agrega tu LinkedIn cuando lo tengas -->
+        <a href="https://github.com/alejandro-gonzalezfer" target="_blank" rel="noopener noreferrer" class="icon-link" aria-label="GitHub (se abre en una pestaña nueva)" data-social="github"></a>
+        <a href="#" class="icon-link" aria-label="LinkedIn" data-social="linkedin"></a>
+        <a href="https://www.instagram.com/alejandro_gonzalezfer/" target="_blank" rel="noopener noreferrer" class="icon-link" aria-label="Instagram (se abre en una pestaña nueva)" data-social="instagram"></a>
+        <a href="https://x.com/alejandroGonF" target="_blank" rel="noopener noreferrer" class="icon-link" aria-label="X / Twitter (se abre en una pestaña nueva)" data-social="x"></a>
+        <a href="mailto:alejandro.ingelectronica@gmail.com" class="icon-link" aria-label="Enviar correo" data-social="mail"></a>
+      </div>
+    </div>
+
+    <button type="button" class="scroll-hint" id="scrollHint" aria-label="Bajar a la sección Sobre mí">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v16M6 14l6 6 6-6"/></svg>
+    </button>
+  </section>
+
+  <!-- ===================== SOBRE MÍ ===================== -->
+  <section class="section" id="sobre-mi" aria-labelledby="sobre-mi-title">
+    <p class="section__eyebrow reveal-up">Sobre mí</p>
+    <h2 class="section__title reveal-up" id="sobre-mi-title">Ingeniería aplicada a procesos reales</h2>
+
+    <div class="about">
+      <div class="about__photo reveal-up">
+        <!-- EDITAR: reemplaza por tu foto real (ver README.md) -->
+        <div class="photo-frame">
+          <span aria-hidden="true">AG</span>
+        </div>
+      </div>
+
+      <div class="about__text reveal-up" style="--delay: 0.1s">
+        <!-- EDITAR: tu biografía -->
+        <p>
+          Ingeniero Electrónico especializado en automatización industrial y control de
+          procesos. Trabajo en el diseño, la puesta en marcha y el mantenimiento de sistemas
+          de control basados en PLC, redes industriales y plataformas SCADA, con foco en
+          la confiabilidad operativa y la reducción de tiempos de parada.
+        </p>
+        <p>
+          Me involucro en todo el ciclo del proyecto: desde el levantamiento de requisitos
+          y el diseño de la arquitectura de control, hasta la programación, las pruebas FAT/SAT
+          y el acompañamiento en planta durante la puesta en marcha. Me interesa especialmente
+          la integración entre el nivel de campo (instrumentación) y los sistemas de supervisión.
+        </p>
+
+        <div class="about__facts">
+          <div class="fact">
+            <span class="fact__label">Ubicación</span>
+            <span class="fact__value">Bucaramanga, Colombia</span>
+          </div>
+          <div class="fact">
+            <span class="fact__label">Título</span>
+            <span class="fact__value">Ingeniero Electrónico</span>
+          </div>
+          <div class="fact">
+            <span class="fact__label">Especialización</span>
+            <span class="fact__value">Automatización Industrial y Control de Procesos</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== HABILIDADES ===================== -->
+  <section class="section" id="habilidades" aria-labelledby="habilidades-title">
+    <p class="section__eyebrow reveal-up">Habilidades</p>
+    <h2 class="section__title reveal-up" id="habilidades-title">Habilidades técnicas</h2>
+    <p class="section__subtitle reveal-up" style="--delay: 0.05s">Nivel de dominio en las herramientas y competencias que uso a diario.</p>
+
+    <div class="skills">
+      <!-- EDITAR: ajusta habilidades y niveles (0-100) en data-value -->
+      <div class="skill-card reveal-up">
+        <div class="skill-card__head">
+          <span class="skill-card__name">Programación de PLC</span>
+          <span class="skill-card__value" data-counter data-value="92">0</span><span class="skill-card__percent">%</span>
+        </div>
+        <p class="skill-card__note">Siemens TIA Portal · Allen-Bradley Studio 5000</p>
+        <div class="skill-card__bar"><div class="skill-card__fill" data-fill data-value="92"></div></div>
+      </div>
+
+      <div class="skill-card reveal-up" style="--delay: 0.05s">
+        <div class="skill-card__head">
+          <span class="skill-card__name">Sistemas SCADA / HMI</span>
+          <span class="skill-card__value" data-counter data-value="88">0</span><span class="skill-card__percent">%</span>
+        </div>
+        <p class="skill-card__note">WinCC · Ignition</p>
+        <div class="skill-card__bar"><div class="skill-card__fill" data-fill data-value="88"></div></div>
+      </div>
+
+      <div class="skill-card reveal-up" style="--delay: 0.1s">
+        <div class="skill-card__head">
+          <span class="skill-card__name">Redes industriales</span>
+          <span class="skill-card__value" data-counter data-value="85">0</span><span class="skill-card__percent">%</span>
+        </div>
+        <p class="skill-card__note">Profinet · Modbus TCP · EtherNet/IP</p>
+        <div class="skill-card__bar"><div class="skill-card__fill" data-fill data-value="85"></div></div>
+      </div>
+
+      <div class="skill-card reveal-up" style="--delay: 0.15s">
+        <div class="skill-card__head">
+          <span class="skill-card__name">Control de procesos</span>
+          <span class="skill-card__value" data-counter data-value="87">0</span><span class="skill-card__percent">%</span>
+        </div>
+        <p class="skill-card__note">Sintonización PID · Modelado de procesos</p>
+        <div class="skill-card__bar"><div class="skill-card__fill" data-fill data-value="87"></div></div>
+      </div>
+
+      <div class="skill-card reveal-up" style="--delay: 0.2s">
+        <div class="skill-card__head">
+          <span class="skill-card__name">Instrumentación industrial</span>
+          <span class="skill-card__value" data-counter data-value="83">0</span><span class="skill-card__percent">%</span>
+        </div>
+        <p class="skill-card__note">Sensores · Transmisores · Actuadores</p>
+        <div class="skill-card__bar"><div class="skill-card__fill" data-fill data-value="83"></div></div>
+      </div>
+
+      <div class="skill-card reveal-up" style="--delay: 0.25s">
+        <div class="skill-card__head">
+          <span class="skill-card__name">Diseño eléctrico industrial</span>
+          <span class="skill-card__value" data-counter data-value="78">0</span><span class="skill-card__percent">%</span>
+        </div>
+        <p class="skill-card__note">AutoCAD Electrical</p>
+        <div class="skill-card__bar"><div class="skill-card__fill" data-fill data-value="78"></div></div>
+      </div>
+    </div>
+
+    <div class="chips reveal-up" style="--delay: 0.1s">
+      <!-- EDITAR: herramientas / software que manejas -->
+      <span class="chip">TIA Portal</span>
+      <span class="chip">Studio 5000 / RSLogix</span>
+      <span class="chip">Ignition SCADA</span>
+      <span class="chip">WinCC</span>
+      <span class="chip">AutoCAD Electrical</span>
+      <span class="chip">Modbus TCP/IP</span>
+      <span class="chip">Normas ISA-101 / ISA-88</span>
+      <span class="chip">LabVIEW</span>
+    </div>
+  </section>
+
+  <!-- ===================== PROYECTOS ===================== -->
+  <section class="section" id="proyectos" aria-labelledby="proyectos-title">
+    <p class="section__eyebrow reveal-up">Portafolio</p>
+    <h2 class="section__title reveal-up" id="proyectos-title">Proyectos destacados</h2>
+    <p class="section__subtitle reveal-up" style="--delay: 0.05s">Casos de estudio de automatización industrial y control de procesos. Haz clic en cualquiera para ver el detalle completo.</p>
+
+    <div class="projects">
+      <!-- EDITAR: reemplaza cada tarjeta con tus proyectos reales -->
+      <article class="project-card reveal-up">
+        <button type="button" class="project-card__trigger js-modal-trigger" data-modal="modal-scada-agua" aria-haspopup="dialog">
+          <div class="project-card__top">
+            <span class="project-card__tag">SCADA</span>
+            <span class="project-card__date">2026</span>
+          </div>
+          <h3>Sistema SCADA para planta de tratamiento de agua</h3>
+          <p>Arquitectura de control con PLC Siemens S7-1200 y supervisión en WinCC: monitoreo de niveles, dosificación química y gestión de alarmas en tiempo real.</p>
+          <div class="project-card__stack">
+            <span>Siemens S7-1200</span><span>WinCC</span><span>Profinet</span>
+          </div>
+          <span class="project-card__link">Ver caso de estudio <span aria-hidden="true">→</span></span>
+        </button>
+      </article>
+
+      <article class="project-card reveal-up" style="--delay: 0.08s">
+        <button type="button" class="project-card__trigger js-modal-trigger" data-modal="modal-migracion-distribuida" aria-haspopup="dialog">
+          <div class="project-card__top">
+            <span class="project-card__tag">Redes industriales</span>
+            <span class="project-card__date">2025</span>
+          </div>
+          <h3>Migración a arquitectura de control distribuida</h3>
+          <p>Rediseño de una red de control centralizada a una topología distribuida sobre Profinet, reduciendo tiempos de ciclo y mejorando la tolerancia a fallos.</p>
+          <div class="project-card__stack">
+            <span>Profinet</span><span>PLC distribuido</span><span>Redundancia</span>
+          </div>
+          <span class="project-card__link">Ver caso de estudio <span aria-hidden="true">→</span></span>
+        </button>
+      </article>
+
+      <article class="project-card reveal-up" style="--delay: 0.16s">
+        <button type="button" class="project-card__trigger js-modal-trigger" data-modal="modal-pid-horno" aria-haspopup="dialog">
+          <div class="project-card__top">
+            <span class="project-card__tag">Control de procesos</span>
+            <span class="project-card__date">2025</span>
+          </div>
+          <h3>Sintonización de lazo PID para control de temperatura</h3>
+          <p>Modelado del proceso, sintonización por el método de Ziegler-Nichols y ajuste fino en planta para un horno industrial, reduciendo el sobreimpulso en un 40%.</p>
+          <div class="project-card__stack">
+            <span>Control PID</span><span>Instrumentación</span><span>MATLAB</span>
+          </div>
+          <span class="project-card__link">Ver caso de estudio <span aria-hidden="true">→</span></span>
+        </button>
+      </article>
+
+      <article class="project-card project-card--ghost reveal-up" style="--delay: 0.24s">
+        <div class="project-card__ghost-inner">
+          <h3>Tu próximo proyecto</h3>
+          <p>Este espacio está listo para tu siguiente caso de estudio. Reemplázalo cuando lo tengas.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ===================== EDUCACIÓN ===================== -->
+  <section class="section" id="educacion" aria-labelledby="educacion-title">
+    <p class="section__eyebrow reveal-up">Trayectoria</p>
+    <h2 class="section__title reveal-up" id="educacion-title">Educación y certificados</h2>
+
+    <div class="timeline">
+      <!-- EDITAR: tu formación -->
+      <div class="timeline__item reveal-up">
+        <span class="timeline__node" aria-hidden="true"></span>
+        <div class="timeline__content glass-card">
+          <span class="timeline__date">2026</span>
+          <h3>Diplomado en Automatización Industrial y Redes de Control</h3>
+          <p>Institución de tu elección</p>
+        </div>
+      </div>
+      <div class="timeline__item reveal-up" style="--delay: 0.1s">
+        <span class="timeline__node" aria-hidden="true"></span>
+        <div class="timeline__content glass-card">
+          <span class="timeline__date">2025</span>
+          <h3>Certificación TIA Portal — Programación de PLC Siemens</h3>
+          <p>Siemens / centro de formación autorizado</p>
+        </div>
+      </div>
+      <div class="timeline__item reveal-up" style="--delay: 0.2s">
+        <span class="timeline__node" aria-hidden="true"></span>
+        <div class="timeline__content glass-card">
+          <span class="timeline__date">2019 — 2024</span>
+          <h3>Ingeniería Electrónica</h3>
+          <p>Universidad — título profesional</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== BLOG ===================== -->
+  <section class="section" id="blog" aria-labelledby="blog-title">
+    <p class="section__eyebrow reveal-up">Blog</p>
+    <h2 class="section__title reveal-up" id="blog-title">Artículos técnicos</h2>
+    <p class="section__subtitle reveal-up" style="--delay: 0.05s">Notas de campo y análisis sobre automatización y control de procesos.</p>
+
+    <div class="blog">
+      <!-- EDITAR: tus entradas de blog -->
+      <button type="button" class="blog-card js-modal-trigger reveal-up" data-modal="modal-blog-pid" aria-haspopup="dialog">
+        <span class="blog-card__date">Jul 2026 · 6 min de lectura</span>
+        <h3>Sintonización PID: Ziegler-Nichols vs. autotuning</h3>
+        <p>Comparativa práctica entre el método clásico y las herramientas de autoajuste en controladores modernos.</p>
+        <span class="blog-card__read">Leer más <span aria-hidden="true">→</span></span>
+      </button>
+      <button type="button" class="blog-card js-modal-trigger reveal-up" style="--delay: 0.08s" data-modal="modal-blog-protocolos" aria-haspopup="dialog">
+        <span class="blog-card__date">Jun 2026 · 5 min de lectura</span>
+        <h3>Profinet vs. Modbus TCP: cuándo elegir cada protocolo</h3>
+        <p>Criterios de decisión para redes industriales según latencia, topología y compatibilidad de equipos.</p>
+        <span class="blog-card__read">Leer más <span aria-hidden="true">→</span></span>
+      </button>
+      <button type="button" class="blog-card js-modal-trigger reveal-up" style="--delay: 0.16s" data-modal="modal-blog-scada" aria-haspopup="dialog">
+        <span class="blog-card__date">May 2026 · 7 min de lectura</span>
+        <h3>Arquitecturas SCADA redundantes: buenas prácticas</h3>
+        <p>Cómo diseñar sistemas de supervisión que toleren fallos de servidor sin detener el proceso.</p>
+        <span class="blog-card__read">Leer más <span aria-hidden="true">→</span></span>
+      </button>
+    </div>
+  </section>
+
+  <!-- ===================== CONTACTO ===================== -->
+  <section class="section" id="contacto" aria-labelledby="contacto-title">
+    <p class="section__eyebrow reveal-up">Contacto</p>
+    <h2 class="section__title reveal-up" id="contacto-title">Hablemos</h2>
+    <p class="section__subtitle reveal-up" style="--delay: 0.05s">¿Proyecto, práctica o simplemente quieres saludar? Escríbeme.</p>
+
+    <div class="contact">
+      <form class="contact__form glass-card reveal-up" id="contactForm" action="https://formspree.io/f/mqerebpw" method="POST" novalidate>
+        <div class="field">
+          <label for="name">Nombre</label>
+          <input type="text" id="name" name="name" required autocomplete="name" placeholder="Tu nombre">
+        </div>
+        <div class="field">
+          <label for="email">Correo</label>
+          <input type="email" id="email" name="email" required autocomplete="email" placeholder="tucorreo@ejemplo.com">
+        </div>
+        <div class="field">
+          <label for="message">Mensaje</label>
+          <textarea id="message" name="message" rows="5" required placeholder="Cuéntame en qué puedo ayudarte..."></textarea>
+        </div>
+        <button type="submit" class="btn btn--primary btn--block" id="contactSubmit">Enviar mensaje</button>
+        <p class="contact__status" id="contactStatus" role="status" aria-live="polite"></p>
+      </form>
+
+      <div class="contact__aside reveal-up" style="--delay: 0.1s">
+        <div class="pin glass-card">
+          <span class="pin__label">Correo</span>
+          <a href="mailto:alejandro.ingelectronica@gmail.com">alejandro.ingelectronica@gmail.com</a>
+        </div>
+        <div class="pin glass-card">
+          <span class="pin__label">Ubicación</span>
+          <span>Bucaramanga, Santander, Colombia</span>
+        </div>
+        <div class="pin glass-card">
+          <span class="pin__label">Redes</span>
+          <div class="hero__socials" aria-label="Redes sociales">
+            <a href="https://github.com/alejandro-gonzalezfer" target="_blank" rel="noopener noreferrer" class="icon-link" aria-label="GitHub (se abre en una pestaña nueva)" data-social="github"></a>
+            <a href="#" class="icon-link" aria-label="LinkedIn" data-social="linkedin"></a>
+            <a href="https://www.instagram.com/alejandro_gonzalezfer/" target="_blank" rel="noopener noreferrer" class="icon-link" aria-label="Instagram (se abre en una pestaña nueva)" data-social="instagram"></a>
+            <a href="https://x.com/alejandroGonF" target="_blank" rel="noopener noreferrer" class="icon-link" aria-label="X / Twitter (se abre en una pestaña nueva)" data-social="x"></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <p>© <span id="year"></span> Alejandro González — Ingeniero Electrónico. Automatización Industrial y Control de Procesos.</p>
+</footer>
+
+<!-- ============================================================
+     MODALES — PROYECTOS
+     Estructura fija: Objetivo → Mi rol → Herramientas → Proceso →
+     Resultados → Galería. Edita el texto o agrega tus imágenes reales
+     reemplazando los recuadros de "Agrega tu imagen aquí".
+=============================================================== -->
+
+<div class="modal" id="modal-scada-agua" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modal-scada-agua-title">
+  <div class="modal__overlay" data-modal-close></div>
+  <div class="modal__dialog glass-card">
+    <button type="button" class="modal__close" data-modal-close aria-label="Cerrar">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+    <p class="modal__meta">SCADA · 2026</p>
+    <h3 id="modal-scada-agua-title" class="modal__title">Sistema SCADA para planta de tratamiento de agua</h3>
+
+    <div class="modal__section">
+      <h4>Objetivo</h4>
+      <p>Dar visibilidad y control centralizado sobre las etapas de potabilización de una planta municipal de capacidad media (~120 L/s), reemplazando el monitoreo manual por un sistema de supervisión en tiempo real.</p>
+    </div>
+    <div class="modal__section">
+      <h4>Mi rol</h4>
+      <p>Diseño de la arquitectura de control, programación completa del PLC y configuración de las pantallas de supervisión, además del acompañamiento en planta durante la puesta en marcha.</p>
+    </div>
+    <div class="modal__section">
+      <h4>Herramientas</h4>
+      <div class="chips">
+        <span class="chip">Siemens S7-1200</span>
+        <span class="chip">WinCC</span>
+        <span class="chip">Profinet</span>
+        <span class="chip">Instrumentación de campo</span>
+      </div>
+    </div>
+    <div class="modal__section">
+      <h4>Proceso</h4>
+      <ol class="modal__steps">
+        <li>Levantamiento de variables de proceso y listado de señales (~60 tags).</li>
+        <li>Diseño de la arquitectura de control y de la red Profinet.</li>
+        <li>Programación del PLC: lógica de arranque/parada, enclavamientos y gestión de alarmas.</li>
+        <li>Desarrollo de pantallas SCADA en WinCC con navegación por etapas del proceso.</li>
+        <li>Pruebas FAT en banco antes del envío a planta.</li>
+        <li>Puesta en marcha y pruebas SAT junto al equipo de operación.</li>
+      </ol>
+    </div>
+    <div class="modal__section">
+      <h4>Resultados</h4>
+      <ul class="modal__results">
+        <li>Reducción del tiempo de respuesta ante alarmas críticas.</li>
+        <li>Disminución cercana al 30% en paradas no programadas durante el primer trimestre.</li>
+        <li>Implementación completa en 12 semanas, del levantamiento a la puesta en marcha.</li>
+      </ul>
+    </div>
+    <div class="modal__section">
+      <h4>Galería</h4>
+      <div class="modal__gallery">
+        <div class="gallery-placeholder">Agrega tu imagen aquí</div>
+        <div class="gallery-placeholder">Agrega tu imagen aquí</div>
+        <div class="gallery-placeholder">Agrega tu imagen aquí</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="modal-migracion-distribuida" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modal-migracion-distribuida-title">
+  <div class="modal__overlay" data-modal-close></div>
+  <div class="modal__dialog glass-card">
+    <button type="button" class="modal__close" data-modal-close aria-label="Cerrar">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+    <p class="modal__meta">Redes industriales · 2025</p>
+    <h3 id="modal-migracion-distribuida-title" class="modal__title">Migración a arquitectura de control distribuida</h3>
+
+    <div class="modal__section">
+      <h4>Objetivo</h4>
+      <p>Modernizar una arquitectura centralizada, con un único PLC maestro y cableado punto a punto para más de 40 señales, hacia una topología distribuida más flexible y tolerante a fallos.</p>
+    </div>
+    <div class="modal__section">
+      <h4>Mi rol</h4>
+      <p>Rediseño de la arquitectura de red, segmentación de la lógica de control por zonas y migración del programa minimizando el tiempo de parada de producción.</p>
+    </div>
+    <div class="modal__section">
+      <h4>Herramientas</h4>
+      <div class="chips">
+        <span class="chip">Profinet</span>
+        <span class="chip">Siemens S7-1500</span>
+        <span class="chip">Switches industriales gestionados</span>
+      </div>
+    </div>
+    <div class="modal__section">
+      <h4>Proceso</h4>
+      <ol class="modal__steps">
+        <li>Análisis de la arquitectura centralizada existente y sus puntos de falla.</li>
+        <li>Segmentación del proceso en 5 zonas funcionales.</li>
+        <li>Diseño de la red Profinet con topología en anillo para redundancia.</li>
+        <li>Migración progresiva de la lógica de control, zona por zona.</li>
+        <li>Pruebas de conmutación ante falla simulada de un nodo.</li>
+      </ol>
+    </div>
+    <div class="modal__section">
+      <h4>Resultados</h4>
+      <ul class="modal__results">
+        <li>Reducción del tiempo de ciclo de barrido en un 35%.</li>
+        <li>Si un nodo falla, solo su zona se detiene, en vez de toda la planta.</li>
+        <li>Diagnóstico y mantenimiento más simples al aislar cada zona.</li>
+      </ul>
+    </div>
+    <div class="modal__section">
+      <h4>Galería</h4>
+      <div class="modal__gallery">
+        <div class="gallery-placeholder">Agrega tu imagen aquí</div>
+        <div class="gallery-placeholder">Agrega tu imagen aquí</div>
+        <div class="gallery-placeholder">Agrega tu imagen aquí</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="modal-pid-horno" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modal-pid-horno-title">
+  <div class="modal__overlay" data-modal-close></div>
+  <div class="modal__dialog glass-card">
+    <button type="button" class="modal__close" data-modal-close aria-label="Cerrar">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+    <p class="modal__meta">Control de procesos · 2025</p>
+    <h3 id="modal-pid-horno-title" class="modal__title">Sintonización de lazo PID para control de temperatura</h3>
+
+    <div class="modal__section">
+      <h4>Objetivo</h4>
+      <p>Reducir el sobreimpulso y el tiempo de estabilización en el control de temperatura de un horno industrial de tratamiento térmico en una planta metalmecánica.</p>
+    </div>
+    <div class="modal__section">
+      <h4>Mi rol</h4>
+      <p>Modelado del proceso, sintonización del lazo de control y validación en planta junto al equipo de mantenimiento.</p>
+    </div>
+    <div class="modal__section">
+      <h4>Herramientas</h4>
+      <div class="chips">
+        <span class="chip">Siemens S7-1200 (PID integrado)</span>
+        <span class="chip">Termopar tipo K</span>
+        <span class="chip">MATLAB</span>
+      </div>
+    </div>
+    <div class="modal__section">
+      <h4>Proceso</h4>
+      <ol class="modal__steps">
+        <li>Registro de la respuesta del horno ante escalones de potencia (curva de reacción).</li>
+        <li>Modelado del proceso como sistema de primer orden con tiempo muerto.</li>
+        <li>Cálculo de parámetros iniciales con el método de Ziegler-Nichols.</li>
+        <li>Ajuste fino en planta observando la respuesta real.</li>
+        <li>Validación con distintos puntos de operación (setpoints).</li>
+      </ol>
+    </div>
+    <div class="modal__section">
+      <h4>Resultados</h4>
+      <ul class="modal__results">
+        <li>Reducción del sobreimpulso en un 40%.</li>
+        <li>Tiempo de estabilización reducido de ~18 a 11 minutos.</li>
+        <li>Menor variabilidad en la temperatura final de la pieza tratada.</li>
+      </ul>
+    </div>
+    <div class="modal__section">
+      <h4>Galería</h4>
+      <div class="modal__gallery">
+        <div class="gallery-placeholder">Agrega tu imagen aquí</div>
+        <div class="gallery-placeholder">Agrega tu imagen aquí</div>
+        <div class="gallery-placeholder">Agrega tu imagen aquí</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     MODALES — BLOG
+=============================================================== -->
+
+<div class="modal" id="modal-blog-pid" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modal-blog-pid-title">
+  <div class="modal__overlay" data-modal-close></div>
+  <div class="modal__dialog glass-card">
+    <button type="button" class="modal__close" data-modal-close aria-label="Cerrar">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+    <p class="modal__meta">Jul 2026 · 6 min de lectura</p>
+    <h3 id="modal-blog-pid-title" class="modal__title">Sintonización PID: Ziegler-Nichols vs. autotuning</h3>
+    <div class="modal__article">
+      <p>Sintonizar un lazo PID sigue siendo una de las tareas más subestimadas del control de procesos. Una mala sintonización puede traducirse en sobreimpulsos peligrosos, oscilaciones sostenidas o procesos demasiado lentos para ser útiles. Dos enfoques dominan la práctica industrial: el método clásico de Ziegler-Nichols y el autotuning de los controladores modernos.</p>
+
+      <h4>El método Ziegler-Nichols</h4>
+      <p>Propuesto en 1942, sigue vigente porque es simple y no requiere software adicional. Existen dos variantes: en lazo abierto, se analiza la curva de reacción del proceso ante un escalón; en lazo cerrado, se lleva el sistema al límite de estabilidad para obtener la ganancia y el período crítico. A partir de esos valores, se calculan las constantes proporcional, integral y derivativa con tablas estandarizadas. Su ventaja es la transparencia: se entiende exactamente de dónde sale cada parámetro. Su desventaja es que tiende a producir respuestas con sobreimpulso considerable, pensadas para "rechazo de perturbaciones" más que para seguimiento suave de setpoint.</p>
+
+      <h4>El autotuning</h4>
+      <p>Los controladores y PLC modernos incluyen rutinas de autoajuste que aplican pequeñas perturbaciones controladas (a menudo un relé) y calculan los parámetros automáticamente, con algoritmos que suelen ser variantes mejoradas del enfoque clásico. La ventaja es la velocidad y la posibilidad de re-sintonizar sin detener tanto tiempo el proceso. La desventaja es que funciona como una caja negra: si el resultado no es el esperado, es más difícil diagnosticar por qué.</p>
+
+      <h4>Cuándo elegir cada uno</h4>
+      <p>Para procesos críticos donde se necesita entender y documentar cada parámetro, Ziegler-Nichols manual sigue siendo defendible. Para procesos con dinámica cambiante, o cuando se necesita re-sintonizar con frecuencia, el autotuning integrado ahorra tiempo valioso. En la práctica, lo habitual es usar el autotuning como punto de partida y luego hacer un ajuste fino manual observando la respuesta real en planta.</p>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="modal-blog-protocolos" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modal-blog-protocolos-title">
+  <div class="modal__overlay" data-modal-close></div>
+  <div class="modal__dialog glass-card">
+    <button type="button" class="modal__close" data-modal-close aria-label="Cerrar">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+    <p class="modal__meta">Jun 2026 · 5 min de lectura</p>
+    <h3 id="modal-blog-protocolos-title" class="modal__title">Profinet vs. Modbus TCP: cuándo elegir cada protocolo</h3>
+    <div class="modal__article">
+      <p>Elegir el protocolo de comunicación equivocado en el diseño de una red industrial es un error que se paga después, cuando escalar o diagnosticar la red se vuelve complicado. Profinet y Modbus TCP son dos de las opciones más comunes, pero responden a necesidades distintas.</p>
+
+      <h4>Profinet</h4>
+      <p>Diseñado para determinismo: garantiza tiempos de ciclo predecibles, lo que lo hace ideal para control de movimiento y aplicaciones donde la sincronización importa. Soporta diagnósticos avanzados a nivel de dispositivo y topologías más complejas, incluida la redundancia por anillo. A cambio, requiere equipos compatibles y una configuración más cuidadosa.</p>
+
+      <h4>Modbus TCP</h4>
+      <p>Su gran fortaleza es la simplicidad y la compatibilidad casi universal: prácticamente cualquier PLC, medidor o variador del mercado lo soporta. Es más fácil de implementar y depurar, pero no ofrece garantías de tiempo real estrictas ni la riqueza de diagnóstico de Profinet, lo que lo hace menos adecuado para lazos de control rápidos.</p>
+
+      <h4>Criterios de decisión</h4>
+      <p>Si el proceso exige control de movimiento, sincronización fina o diagnósticos detallados por dispositivo, Profinet es la opción más sólida. Si la prioridad es integrar equipos heterogéneos de distintos fabricantes con el menor esfuerzo posible, o el proceso no es especialmente sensible al tiempo, Modbus TCP suele ser suficiente y más económico. En muchas plantas conviven ambos: Profinet en el nivel de control y Modbus TCP para integrar instrumentos de campo más simples.</p>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="modal-blog-scada" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modal-blog-scada-title">
+  <div class="modal__overlay" data-modal-close></div>
+  <div class="modal__dialog glass-card">
+    <button type="button" class="modal__close" data-modal-close aria-label="Cerrar">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+    <p class="modal__meta">May 2026 · 7 min de lectura</p>
+    <h3 id="modal-blog-scada-title" class="modal__title">Arquitecturas SCADA redundantes: buenas prácticas</h3>
+    <div class="modal__article">
+      <p>En plantas donde detener la supervisión equivale a operar a ciegas, un solo servidor SCADA es un punto único de falla inaceptable. Configurar redundancia con WinCC me enseñó que la parte técnica es solo la mitad del trabajo: la otra mitad es la disciplina de mantenerla probada.</p>
+
+      <h4>Arquitectura redundante con WinCC</h4>
+      <p>El esquema típico usa un servidor primario y uno secundario en sincronización constante, de modo que si el primario falla, el secundario asume el control sin que el operador pierda visibilidad del proceso. La sincronización debe viajar por una red separada de la red de control, precisamente para que un problema en una no afecte a la otra.</p>
+
+      <h4>Buenas prácticas</h4>
+      <ul class="modal__results">
+        <li>Aislar la red de sincronización de servidores de la red de planta.</li>
+        <li>Programar pruebas periódicas de conmutación, no solo confiar en que "funcionará cuando toque".</li>
+        <li>Monitorear activamente el estado de sincronización, no solo la disponibilidad de cada servidor.</li>
+        <li>Documentar el procedimiento de conmutación manual por si la automática falla.</li>
+      </ul>
+
+      <h4>Una lección aprendida</h4>
+      <p>En una prueba de conmutación programada, el servidor secundario tardó más de lo esperado en tomar el control porque la sincronización llevaba retraso acumulado sin que ninguna alarma lo señalara. Desde entonces, la sincronización se volvió una variable monitoreada como cualquier otra del proceso, con su propia alarma de retraso excesivo.</p>
+    </div>
+  </div>
+</div>
+
+<script src="js/script.js" defer></script>
+</body>
+</html>
